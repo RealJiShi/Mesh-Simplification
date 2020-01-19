@@ -2,3 +2,6 @@
 /objs
 *.o
 main
+build\-src\-Imported_Kit_50cfbc\-Default
+build\-src\-Imported_Kit_50cfbc\-Release
+src/CMakeLists.txt.user

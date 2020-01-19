@@ -13,12 +13,13 @@
 #include "map.hpp"
 #include "kdtree.hpp"
 
-class Mesh {
+class Mesh
+{
 private:
-    Vertex* vertices;
-    Vec3* originVertices;
-    Face* originFace;
-    Pair* pairs;
+    Vertex *vertices;
+    Vec3 *originVertices;
+    Face *originFace;
+    Pair *pairs;
     Map faceMap;
     Heap heap;
     Kdtree tree;
@@ -29,28 +30,30 @@ private:
     int vertexCount;
     double rate;
     double t;
-    bool* valid;
-    bool* inPair;
-    bool* inFace;
-
+    bool *valid;
+    bool *inPair;
+    bool *inFace;
 
     void computeQ();
     void computeValidPairs();
-    int addVertex(const Vec3& p);
+    int addVertex(const Vec3 &p);
     int addPair(int v1, int v2);
     void delVertex(int index);
-    void addFace(const Face& f);
-    bool update(const Pair& pair);
+    void addFace(const Face &f);
+    bool update(const Pair &pair);
 
 public:
     Mesh();
     ~Mesh();
-    void load(const std::string& path);
-    void save(const std::string& path);
+    void load(const std::string &path);
+    void save(const std::string &path);
     double eval();
-    void setRate(double rate, double t) { this->rate = rate; this->t = t;}
+    void setRate(double rate, double t)
+    {
+        this->rate = rate;
+        this->t = t;
+    }
     void simplify();
 };
-
 
 #endif

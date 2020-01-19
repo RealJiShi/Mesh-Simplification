@@ -4,7 +4,8 @@
 #include <math.h>
 #include <iostream>
 
-class Vec3 {
+class Vec3
+{
 public:
     double x, y, z;
     Vec3(double xx = 0, double yy = 0, double zz = 0) : x(xx), y(yy), z(zz) {}
@@ -25,7 +26,12 @@ public:
     friend Vec3 operator+(const Vec3 &v, double r) { return Vec3(v.x + r, v.y + r, v.z + r); }
     friend Vec3 operator-(const Vec3 &v, double r) { return Vec3(v.x - r, v.y - r, v.z - r); }
     friend Vec3 operator/(const Vec3 &v, double a) { return Vec3(v.x / a, v.y / a, v.z / a); }
-    void operator+=(const Vec3 &v) { x += v.x; y += v.y; z += v.z; }
+    void operator+=(const Vec3 &v)
+    {
+        x += v.x;
+        y += v.y;
+        z += v.z;
+    }
 
     Vec3 cross(const Vec3 &v) const { return Vec3(y * v.z - z * v.y, z * v.x - x * v.z, x * v.y - y * v.x); }
     double dot(const Vec3 &v) const { return x * v.x + y * v.y + z * v.z; }
